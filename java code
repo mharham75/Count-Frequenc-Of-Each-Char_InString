@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+public class Main {
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in); //to take user input
+        String str = sc.nextLine();
+        
+        Map<Character,Integer> mapCount = new HashMap<>();  //take map to store characters with their frequency
+        
+        for(Character ch : str.toCharArray())
+        {
+          if(mapCount.containsKey(ch))     //if key present , add value by 1 to that key
+            mapCount.put(ch,mapCount.get(ch)+1); 
+          else
+            mapCount.put(ch,1); // if key not present add key with value 1 in map
+        }
+        
+        System.out.println(mapCount);
+        sc.close();
+    }
+ }
